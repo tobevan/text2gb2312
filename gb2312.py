@@ -7448,12 +7448,12 @@ mapping = {
 
 
 def encode_to_gb2312(text):
-    output = ""
+    output = ''
     for char in text:
         unicode_hex = f"{ord(char):04X}"  # 获取字符的Unicode编码的十六进制表示
         gb2312_code = mapping.get(unicode_hex)  # 从映射表中查找对应的GB2312编码
         if gb2312_code:
             output += gb2312_code
         else:
-            raise ValueError(f"No GB2312 code found for character {char} with Unicode {unicode_hex}")
+            raise ValueError(f"No GB2312 code found for text {text}")
     return output
